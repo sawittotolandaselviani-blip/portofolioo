@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio | Selviani Sawitto Tolanda'</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#0f172a;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    /* Navbar */
+    nav{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      padding:20px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(15,23,42,0.85);
+      backdrop-filter:blur(10px);
+      z-index:999;
+    }
+
+    nav h2{
+      color:#f472b6;
+      font-size:28px;
+      font-weight:700;
+    }
+
+    nav ul{
+      display:flex;
+      gap:30px;
+      list-style:none;
+    }
+
+    nav ul li a{
+      transition:0.3s;
+      font-size:15px;
+    }
+
+    nav ul li a:hover{
+      color:#f472b6;
+    }
+
+    /* Hero */
+    .hero{
+      min-height:100vh;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:120px 8%;
+      gap:50px;
+      flex-wrap:wrap;
+    }
+
+    .hero-text{
+      flex:1;
+      min-width:300px;
+    }
+
+    .hero-text h4{
+      color:#f472b6;
+      margin-bottom:10px;
+      font-size:20px;
+    }
+
+    .hero-text h1{
+      font-size:60px;
+      line-height:1.1;
+      margin-bottom:20px;
+    }
+
+    .hero-text p{
+      color:#cbd5e1;
+      line-height:1.8;
+      margin-bottom:30px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 30px;
+      background:linear-gradient(135deg,#f472b6,#ec4899);
+      border-radius:50px;
+      color:white;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:translateY(-4px);
+      box-shadow:0 10px 25px rgba(244,114,182,0.4);
+    }
+
+    .hero-image{
+      flex:1;
+      min-width:300px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .profile-circle{
+      width:350px;
+      height:350px;
+      border-radius:50%;
+      background:linear-gradient(135deg,#f472b6,#8b5cf6);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:110px;
+      font-weight:700;
+      box-shadow:0 0 40px rgba(244,114,182,0.4);
+    }
+
+    /* General */
+    section{
+      padding:100px 8%;
+    }
+
+    .title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .title h2{
+      font-size:42px;
+      margin-bottom:10px;
+    }
+
+    .title p{
+      color:#94a3b8;
+    }
+
+    /* Cards */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:#1e293b;
+      padding:30px;
+      border-radius:20px;
+      transition:0.3s;
+      border:1px solid rgba(255,255,255,0.05);
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+      border-color:#f472b6;
+    }
+
+    .card h3{
+      margin-bottom:15px;
+      color:#f472b6;
+    }
+
+    .card p{
+      color:#cbd5e1;
+      line-height:1.8;
+    }
+
+    /* Skills */
+    .skill-box{
+      text-align:center;
+      padding:30px;
+      background:#1e293b;
+      border-radius:20px;
+      transition:0.3s;
+    }
+
+    .skill-box:hover{
+      background:#f472b6;
+      transform:translateY(-5px);
+    }
+
+    .skill-box:hover p,
+    .skill-box:hover h3{
+      color:#0f172a;
+    }
+
+    .skill-box h3{
+      margin-bottom:10px;
+      color:white;
+    }
+
+    .skill-box p{
+      color:#cbd5e1;
+    }
+
+    /* Timeline */
+    .timeline{
+      border-left:3px solid #f472b6;
+      padding-left:30px;
+      display:flex;
+      flex-direction:column;
+      gap:40px;
+    }
+
+    .timeline-item h3{
+      margin-bottom:8px;
+    }
+
+    .timeline-item span{
+      color:#f472b6;
+      font-size:14px;
+    }
+
+    .timeline-item p{
+      color:#cbd5e1;
+      margin-top:10px;
+      line-height:1.7;
+    }
+
+    /* Achievement */
+    .achievement{
+      background:#1e293b;
+      padding:35px;
+      border-radius:20px;
+      text-align:center;
+      transition:0.3s;
+    }
+
+    .achievement:hover{
+      transform:scale(1.03);
+    }
+
+    .achievement h1{
+      color:#f472b6;
+      font-size:42px;
+      margin-bottom:10px;
+    }
+
+    /* Contact */
+    .contact{
+      text-align:center;
+    }
+
+    .socials{
+      margin-top:30px;
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .socials a{
+      padding:12px 24px;
+      border:1px solid #f472b6;
+      border-radius:50px;
+      transition:0.3s;
+    }
+
+    .socials a:hover{
+      background:#f472b6;
+      color:#0f172a;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      border-top:1px solid rgba(255,255,255,0.08);
+      color:#94a3b8;
+    }
+
+    @media(max-width:768px){
+
+      nav ul{
+        display:none;
+      }
+
+      .hero{
+        text-align:center;
+      }
+
+      .hero-text h1{
+        font-size:42px;
+      }
+
+      .profile-circle{
+        width:250px;
+        height:250px;
+        font-size:70px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <h2>Selviani.</h2>
+
+    <ul>
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#skills">Skill</a></li>
+      <li><a href="#experience">Pengalaman</a></li>
+      <li><a href="#achievement">Prestasi</a></li>
+      <li><a href="#contact">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+
+    <div class="hero-text">
+      <h4>Hello, I'm</h4>
+      <h1>Selviani Sawitto Tolanda'</h1>
+
+      <p>
+        Mahasiswa kreatif dan ambisius yang memiliki ketertarikan besar
+        pada dunia desain visual, public relation, dan pengembangan media digital.
+        Aktif dalam organisasi kampus serta berbagai kegiatan kreatif yang
+        berfokus pada inovasi dan komunikasi modern.
+      </p>
+
+      <a href="#about" class="btn">Explore Portfolio</a>
+    </div>
+
+    <div class="hero-image">
+      <div class="profile-circle">ST</div>
+    </div>
+
+  </section>
+
+  <!-- About -->
+  <section id="about">
+
+    <div class="title">
+      <h2>Tentang Saya</h2>
+      <p>Profil singkat dan informasi pribadi</p>
+    </div>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>Bio</h3>
+
+        <p>
+          Saya adalah seorang mahasiswa yang senang mengeksplorasi dunia kreatif,
+          komunikasi digital, dan desain modern. Memiliki kemampuan berpikir
+          inovatif, bekerja dalam tim, serta cepat beradaptasi dengan lingkungan baru.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Informasi Pribadi</h3>
+
+        <p>
+          <strong>Nama:</strong> Selviani Sawitto Tolanda' <br><br>
+          <strong>Jenis Kelamin:</strong> Perempuan <br><br>
+          <strong>Status:</strong> Mahasiswa <br><br>
+          <strong>Email:</strong> selviani.creative@gmail.com <br><br>
+          <strong>Lokasi:</strong> Makassar, Indonesia
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Tujuan Karir</h3>
+
+        <p>
+          Menjadi profesional muda di bidang creative media dan digital branding
+          yang mampu menciptakan karya inovatif serta memberikan inspirasi
+          melalui kreativitas dan komunikasi visual.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+
+    <div class="title">
+      <h2>Keahlian</h2>
+      <p>Kemampuan utama yang dimiliki</p>
+    </div>
+
+    <div class="grid">
+
+      <div class="skill-box">
+        <h3>Graphic Design</h3>
+        <p>Membuat desain modern dan elegan.</p>
+      </div>
+
+      <div class="skill-box">
+        <h3>Content Creator</h3>
+        <p>Mengelola konten kreatif media sosial.</p>
+      </div>
+
+      <div class="skill-box">
+        <h3>Public Speaking</h3>
+        <p>Komunikasi efektif dan percaya diri.</p>
+      </div>
+
+      <div class="skill-box">
+        <h3>UI/UX Design</h3>
+        <p>Desain tampilan digital modern.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+
+    <div class="title">
+      <h2>Pengalaman Kerja</h2>
+      <p>Pengalaman profesional dan organisasi</p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <h3>Creative Content Intern</h3>
+        <span>2023 - 2024 | Vision Media Agency</span>
+
+        <p>
+          Membantu tim kreatif dalam membuat konten promosi,
+          desain media sosial, dan konsep branding untuk berbagai klien lokal.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Social Media Designer</h3>
+        <span>2024 - Sekarang | Inspire Creative Studio</span>
+
+        <p>
+          Bertanggung jawab dalam pembuatan desain konten digital,
+          strategi visual media sosial, dan peningkatan engagement audience.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Koordinator Media Organisasi Kampus</h3>
+        <span>2022 - 2025</span>
+
+        <p>
+          Memimpin tim publikasi dan dokumentasi dalam berbagai kegiatan kampus,
+          termasuk seminar, event mahasiswa, dan kegiatan sosial.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Achievement -->
+  <section id="achievement">
+
+    <div class="title">
+      <h2>Pencapaian & Karir</h2>
+      <p>Prestasi dan perkembangan profesional</p>
+    </div>
+
+    <div class="grid">
+
+      <div class="achievement">
+        <h1>25+</h1>
+        <p>Project Kreatif Diselesaikan</p>
+      </div>
+
+      <div class="achievement">
+        <h1>7</h1>
+        <p>Penghargaan Kreativitas Mahasiswa</p>
+      </div>
+
+      <div class="achievement">
+        <h1>30K</h1>
+        <p>Total Audience Media Sosial</p>
+      </div>
+
+      <div class="achievement">
+        <h1>5</h1>
+        <p>Kolaborasi Brand Lokal</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+
+    <div class="title">
+      <h2>Kontak</h2>
+      <p>Hubungi saya melalui platform berikut</p>
+    </div>
+
+    <div class="contact">
+
+      <p>
+        Terbuka untuk kolaborasi kreatif, project desain,
+        dan pengembangan media digital modern.
+      </p>
+
+      <div class="socials">
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">TikTok</a>
+        <a href="#">Email</a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2026 Selviani Sawitto Tolanda' | Portfolio Website
+  </footer>
+
+</body>
+</html>
